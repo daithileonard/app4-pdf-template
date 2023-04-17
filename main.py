@@ -1,16 +1,11 @@
-# This is a sample Python script.
+from fpdf import FPDF
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+pdf = FPDF(orientation="P", unit="mm", format="A4")
 
+pdf.add_page()
+pdf.set_font(family="Times", size=12)
+pdf.cell(w=0, h=12, txt="Hi PDF", align='L', ln=1, border=1)
+pdf.cell(w=0, h=12, txt="Hello", align='L', ln=1, border=1)
+pdf.cell(w=0, h=12, txt="Its Me", align='L', ln=1, border=1)
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+pdf.output("output.pdf")
